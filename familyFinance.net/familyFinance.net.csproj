@@ -1,0 +1,173 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4AC74244-698F-473F-B7D1-47A57B25FA8A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>familyFinance.net</RootNamespace>
+    <AssemblyName>familyFinance.net</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <ApplicationIcon>familyfinance.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GraphLibrary, Version=1.0.4251.16034, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\GraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dialog\dialogInserisciMovimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dialog\dialogInserisciMovimento.Designer.cs">
+      <DependentUpon>dialogInserisciMovimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="library\libreria.cs" />
+    <Compile Include="library\movimento.cs" />
+    <Compile Include="plugin\pannelloMovimenti.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plugin\pannelloMovimenti.Designer.cs">
+      <DependentUpon>pannelloMovimenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="plugin\pannelloOpzioni.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plugin\pannelloOpzioni.Designer.cs">
+      <DependentUpon>pannelloOpzioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="plugin\pannelloSaldo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plugin\pannelloSaldo.Designer.cs">
+      <DependentUpon>pannelloSaldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="plugin\pannelloStatistiche.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="plugin\pannelloStatistiche.Designer.cs">
+      <DependentUpon>pannelloStatistiche.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="dialog\dialogInserisciMovimento.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>dialogInserisciMovimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="plugin\pannelloMovimenti.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>pannelloMovimenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="plugin\pannelloOpzioni.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>pannelloOpzioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="plugin\pannelloSaldo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>pannelloSaldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="plugin\pannelloStatistiche.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>pannelloStatistiche.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gold2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="familyFinance.sqlite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\money_icon_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opzioni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\icona_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="familyfinance.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
